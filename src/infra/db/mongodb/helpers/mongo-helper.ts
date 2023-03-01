@@ -6,7 +6,7 @@ export const MongoHelper = {
 
   async connect (uri: string): Promise<void> {
     this.uri = uri
-    this.client = await MongoClient.connect(process.env.MONGO_URL)
+    this.client = await MongoClient.connect(uri)
   },
 
   async disconnect (): Promise<void> {
@@ -14,16 +14,13 @@ export const MongoHelper = {
     this.client = null
   },
 
-  getCollection (name: string): Collection {
+  async getCollection (name: string): Promise<Collection> {
+    await this.connect(this.uri)
     return this.client.db().collection(name)
   },
 
-  map: (data: any): any => {
-    const { _id, ...rest } = data
-    return { ...rest, id: _id.toHexString() }
-  },
-
-  mapCollection: (collection: any[]): any[] => {
-    return collection.map(c => MongoHelper.map(c))
+  map: (collection: any): any => {
+    const { _id, ...collectionWithoutId } = collection
+    return Object.assign({}, collectionWithoutId, { id: _id })
   }
 }
