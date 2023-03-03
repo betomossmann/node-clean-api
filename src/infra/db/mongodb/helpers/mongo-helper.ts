@@ -10,15 +10,21 @@ export const MongoHelper = {
   },
 
   async disconnect (): Promise<void> {
-    await this.client.close()
+    if (this.client) {
+      await this.client.close()
+      this.client = null
+    }
   },
 
-  getCollection (name: string): Collection {
-    return this.client.db().collection('name')
+  async getCollection (name: string): Promise<Collection> {
+    if (!this.client?.connected) {
+      await this.connect(this.uri)
+    }
+    return this.client.db().collection(name)
   },
 
   map: (collection: any): any => {
     const { _id, ...collectionWithoutId } = collection
-    return { ...collectionWithoutId, id: _id }
+    return { id: _id?.toString(), ...collectionWithoutId } // converte o _id para string se estiver definido
   }
 }
