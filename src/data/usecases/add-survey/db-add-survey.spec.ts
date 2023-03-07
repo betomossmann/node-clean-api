@@ -3,7 +3,7 @@ import { AddSurveyModel, AddSurveyRepository } from './db-add-survey-protocols'
 
 const makeFakeSurveyData = (): AddSurveyModel => ({
   question: 'any_question',
-  answer: [{
+  answers: [{
     image: 'any_image',
     answer: 'any_answer'
   }]
