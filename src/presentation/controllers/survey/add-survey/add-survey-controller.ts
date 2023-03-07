@@ -13,10 +13,10 @@ export class AddSurveyController implements Controller {
       if (error) {
         return badRequest(error)
       }
-      const { question, answer } = httpRequest.body
+      const { question, answers } = httpRequest.body
       await this.addSurvey.add({
         question,
-        answer
+        answers
       })
       return noContent()
     } catch (error) {
