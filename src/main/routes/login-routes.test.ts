@@ -1,10 +1,10 @@
-import { hash } from 'bcrypt'
-import { Collection } from 'mongodb'
 import request from 'supertest'
-import { MongoHelper } from '../../infra/db/mongodb/helpers/mongo-helper'
-import app from '../config/app'
+import app from '@/main/config/app'
+import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
+import { Collection } from 'mongodb'
+import { hash } from 'bcrypt'
 
-let accountCollection = Collection
+let accountCollection: Collection
 
 describe('Login Routes', () => {
   beforeAll(async () => {
