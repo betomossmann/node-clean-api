@@ -1,8 +1,9 @@
-import request from 'supertest'
-import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
-import { Collection } from 'mongodb'
-import { hash } from 'bcrypt'
 import app from '../config/app'
+import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
+
+import request from 'supertest'
+import { hash } from 'bcrypt'
+import { Collection } from 'mongodb'
 
 let accountCollection: Collection
 
@@ -26,7 +27,7 @@ describe('Login Routes', () => {
         .post('/api/signup')
         .send({
           name: 'Gilberto',
-          email: 'gilbertomossmann@gmail.com',
+          email: 'example@gmail.com',
           password: '123',
           passwordConfirmation: '123'
         })
@@ -39,13 +40,13 @@ describe('Login Routes', () => {
       const password = await hash('123', 12)
       await accountCollection.insertOne({
         name: 'Gilberto',
-        email: 'gilbertomossmann@gmail.com',
+        email: 'example@gmail.com',
         password
       })
       await request(app)
         .post('/api/login')
         .send({
-          email: 'gilbertomossmann@gmail.com',
+          email: 'example@gmail.com',
           password: '123'
         })
         .expect(200)
@@ -55,7 +56,7 @@ describe('Login Routes', () => {
       await request(app)
         .post('/api/login')
         .send({
-          email: 'gilbertomossmann@gmail.com',
+          email: 'example@gmail.com',
           password: '123'
         })
         .expect(401)
