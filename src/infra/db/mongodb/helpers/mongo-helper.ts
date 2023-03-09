@@ -11,15 +11,18 @@ export const MongoHelper = {
 
   async disconnect (): Promise<void> {
     await this.client.close()
-    this.client = null
   },
 
   async getCollection (name: string): Promise<Collection> {
     return this.client.db().collection(name)
   },
 
-  map: (collection: any): any => {
-    const { _id, ...collectionWithoutId } = collection
-    return { ...collectionWithoutId, id: _id.toString() }
+  map: (data: any): any => {
+    const { _id, ...rest } = data
+    return { ...rest, id: _id.toHexString() }
+  },
+
+  mapCollection: (collection: any[]): any[] => {
+    return collection.map(c => MongoHelper.map(c))
   }
 }
