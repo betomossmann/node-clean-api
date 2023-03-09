@@ -62,7 +62,7 @@ describe('Account Mongo Repository', () => {
   })
 
   describe('updateAccessToken()', () => {
-    test('Should update the account accessToken on UpdateAccessToken success', async () => {
+    test('Should update the account accessToken on success', async () => {
       const sut = makeSut()
       const res = await accountCollection.insertOne({
         name: 'any_name',
