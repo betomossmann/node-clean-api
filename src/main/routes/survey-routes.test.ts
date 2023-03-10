@@ -2,9 +2,9 @@ import app from '../config/app'
 import env from '../config/env'
 import { MongoHelper } from '@/infra/db/mongodb/helpers/mongo-helper'
 
-import request from 'supertest'
-import { Collection } from 'mongodb'
 import { sign } from 'jsonwebtoken'
+import { Collection } from 'mongodb'
+import request from 'supertest'
 
 let surveyCollection: Collection
 let accountCollection: Collection
@@ -16,7 +16,7 @@ const mockAccessToken = async (): Promise<string> => {
     password: '123',
     role: 'admin'
   })
-  const id = res.insertedId.toHexString()
+  const id = res.insertedId.toString()
   const accessToken = sign({ id }, env.jwtSecret)
   await accountCollection.updateOne({
     _id: res.insertedId
