@@ -1,8 +1,8 @@
-import { SurveyAnswerModel } from '../models/survey'
+import { SurveyResultModel } from '../models/survey-result'
 
 export type AddSurveyModel = {
   question: string
-  answers: SurveyAnswerModel[]
+  answers: SurveyResultModel[]
   date: Date
 }
 

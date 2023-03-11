@@ -1,4 +1,4 @@
-import { LogMongoRepository } from './log-repository'
+import { LogMongoRepository } from './log-mongo-repository'
 import { MongoHelper } from '../helpers/mongo-helper'
 import { Collection } from 'mongodb'
 
@@ -18,7 +18,7 @@ describe('log Mongo Repository', () => {
   })
 
   beforeEach(async () => {
-    errorCollection = await MongoHelper.getCollection('errors')
+    errorCollection = MongoHelper.getCollection('errors')
     await errorCollection.deleteMany({})
   })
 
