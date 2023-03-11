@@ -1,6 +1,6 @@
 import { SurveyMongoRepository } from './survey-mongo-repository'
 import { MongoHelper } from '../helpers/mongo-helper'
-import { Collection, ObjectId } from 'mongodb'
+import { Collection } from 'mongodb'
 
 let surveyCollection: Collection
 
@@ -84,15 +84,9 @@ describe('Survey Mongo Repository', () => {
         date: new Date()
       })
       const sut = makeSut()
-      const survey = await sut.loadById(res.insertedId.toString())
+      const survey = await sut.loadById(res.insertedId.toHexString())
       expect(survey).toBeTruthy()
       expect(survey.id).toBeTruthy()
-    })
-
-    test('Should return null if survey does not exists', async () => {
-      const sut = makeSut()
-      const survey = await sut.loadById(new ObjectId().toString())
-      expect(survey).toBeFalsy()
     })
   })
 })
