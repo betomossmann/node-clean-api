@@ -1,14 +1,7 @@
 export type SurveyResultModel = {
+  id: string
   surveyId: string
-  question: string
-  answers: SurveyResultAnswerModel[]
-  date: Date
-}
-
-type SurveyResultAnswerModel = {
-  image?: string
+  accountId: string
   answer: string
-  count: number
-  percent: number
-  isCurrentAccountAnswer: boolean
+  date: Date
 }

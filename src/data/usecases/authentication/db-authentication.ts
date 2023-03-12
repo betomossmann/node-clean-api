@@ -1,5 +1,5 @@
 import { HashComparer } from '@/data/protocols/cryptography'
-import { Authentication, AuthenticationModel, Encrypter, LoadAccountByEmailRepository, UpdateAccessTokenRepository } from './db-authentication-protocols'
+import { Authentication, AuthenticationParams, Encrypter, LoadAccountByEmailRepository, UpdateAccessTokenRepository } from './db-authentication-protocols'
 
 export class DbAuthentication implements Authentication {
   constructor (
@@ -9,7 +9,7 @@ export class DbAuthentication implements Authentication {
     private readonly updateAccessTokenRepository: UpdateAccessTokenRepository
   ) {}
 
-  async auth (authentication: AuthenticationModel): Promise<string> {
+  async auth (authentication: AuthenticationParams): Promise<string> {
     const account = await this.loadAccountByEmailRepository.loadByEmail(authentication.email)
     if (account) {
       const isValid = await this.hashComparer.compare(authentication.password, account.password)
