@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/main/server.js",
-    "debug": "nodemon -L --watchAll ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
+    "debug": "nodemon -L --watch ./dist --inspect=0.0.0.0:9222 --nolazy ./dist/main/server.js",
     "build": "rimraf dist && tsc -p tsconfig-build.json",
     "build:watch": "rimraf dist && tsc -p tsconfig-build.json -w",
     "postbuild": "copyfiles -u 1 public/**/* dist/static",
@@ -55,6 +55,7 @@
     "lint-staged": "^13.2.0",
     "mockdate": "^3.0.5",
     "rimraf": "^4.4.0",
+    "sucrase": "^3.30.0",
     "supertest": "^6.3.3",
     "ts-jest": "^29.0.5",
     "typescript": "^5.0.2"
