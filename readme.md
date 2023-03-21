@@ -1,4 +1,7 @@
+[![Build Status](https://app.travis-ci.com/betomossmann/node-clean-api.svg?branch=master)](https://app.travis-ci.com/betomossmann/node-clean-api)
+[![Coverage Status](https://coveralls.io/repos/github/betomossmann/node-clean-api/badge.svg?branch=main)](https://coveralls.io/github/betomossmann/node-clean-api?branch=main)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 
 > ## APIs construídas no treinamento
 
