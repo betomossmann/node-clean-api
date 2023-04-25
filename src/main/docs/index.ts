@@ -3,7 +3,7 @@ import components from './components'
 import schemas from './schemas'
 
 export default {
-  openapi: '2.5.0',
+  openapi: '3.0.0',
   info: {
     title: 'Bdev - Enquetes para Programadores',
     description: 'Essa é a documentação da API de NodeJs usando Typescript, TDD, Clean Architecture e seguindo os princípios do SOLID e Design Patterns.',
