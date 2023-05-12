@@ -68,7 +68,7 @@ describe('Login Controller', () => {
 
   test('Should return 400 if Validation returns an error', async () => {
     const { sut, validationSpy } = makeSut()
-    validationSpy.error = new MissingParamError(faker.random.word())
+    validationSpy.error = new MissingParamError(faker.lorem.word())
     const httpResponse = await sut.handle(mockRequest())
     expect(httpResponse).toEqual(badRequest(validationSpy.error))
   })

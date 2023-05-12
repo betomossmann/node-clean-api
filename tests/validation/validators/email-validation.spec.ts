@@ -5,7 +5,7 @@ import { throwError } from '@/tests/domain/mocks'
 
 import { faker } from '@faker-js/faker'
 
-const field = faker.random.word()
+const field = faker.lorem.word()
 
 type SutTypes = {
   sut: EmailValidation

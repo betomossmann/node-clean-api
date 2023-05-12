@@ -69,16 +69,16 @@ describe('AccountMongoRepository', () => {
   })
 
   describe('loadByToken()', () => {
-    let name = faker.name.fullName()
+    let name = faker.person.fullName()
     let email = faker.internet.email()
     let password = faker.internet.password()
-    let accessToken = faker.datatype.uuid()
+    let accessToken = faker.string.uuid()
 
     beforeEach(() => {
-      name = faker.name.fullName()
+      name = faker.person.fullName()
       email = faker.internet.email()
       password = faker.internet.password()
-      accessToken = faker.datatype.uuid()
+      accessToken = faker.string.uuid()
     })
 
     test('Should return an account on loadByToken without role', async () => {

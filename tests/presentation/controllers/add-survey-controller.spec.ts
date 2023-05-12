@@ -7,10 +7,10 @@ import MockDate from 'mockdate'
 import { faker } from '@faker-js/faker'
 
 const mockRequest = (): AddSurveyController.Request => ({
-  question: faker.random.words(),
+  question: faker.lorem.words(),
   answers: [{
-    image: faker.image.imageUrl(),
-    answer: faker.random.word()
+    image: faker.image.url(),
+    answer: faker.lorem.word()
   }]
 })
 

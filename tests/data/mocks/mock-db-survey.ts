@@ -24,8 +24,8 @@ export class LoadSurveyByIdRepositorySpy implements LoadSurveyByIdRepository {
 export class LoadAnswersBySurveyRepositorySpy implements LoadAnswersBySurveyRepository {
   id: string
   result = [
-    faker.random.word(),
-    faker.random.word()
+    faker.lorem.word(),
+    faker.lorem.word()
   ]
 
   async loadAnswers (id: string): Promise<LoadAnswersBySurveyRepository.Result> {

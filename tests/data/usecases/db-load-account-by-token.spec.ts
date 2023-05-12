@@ -26,8 +26,8 @@ let role: string
 
 describe('DbLoadAccountByToken Usecase', () => {
   beforeEach(() => {
-    token = faker.datatype.uuid()
-    role = faker.random.word()
+    token = faker.string.uuid()
+    role = faker.lorem.word()
   })
 
   test('Should call Decrypter with correct ciphertext', async () => {

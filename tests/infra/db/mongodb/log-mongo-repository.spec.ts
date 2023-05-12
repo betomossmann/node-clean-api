@@ -25,7 +25,7 @@ describe('LogMongoRepository', () => {
 
   test('Should create an error log on success', async () => {
     const sut = makeSut()
-    await sut.logError(faker.random.words())
+    await sut.logError(faker.lorem.words())
     const count = await errorCollection.countDocuments()
     expect(count).toBe(1)
   })
