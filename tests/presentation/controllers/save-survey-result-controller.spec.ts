@@ -3,7 +3,6 @@ import { InvalidParamError } from '@/presentation/errors'
 import { forbidden, serverError, ok } from '@/presentation/helpers'
 import { SaveSurveyResultSpy, LoadAnswersBySurveySpy } from '@/tests/presentation/mocks'
 import { throwError } from '@/tests/domain/mocks'
-
 import MockDate from 'mockdate'
 import { faker } from '@faker-js/faker'
 
