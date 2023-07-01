@@ -1,5 +1,16 @@
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com)
+[![Known Vulnerabilities](https://snyk.io/test/github/betomossmann/clean-code-react/badge.svg)](https://snyk.io/test/github/betomossmann/clean-code-react)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+
+# **[BDev](http://beto.dev.br/) - API NodeJs, TS, TDD, CA, DP and SOLID**
+
+## *- NodeJs, Typescript, TDD, Clean Architecture, Design Patterns and SOLID*
+
+<br />
+
+## *[Swagger API Documentation](https://bdev.onrender.com/api-docs/)*
+
+<br />
 
 > ## APIs construídas
 
@@ -59,7 +70,6 @@
 * Docker
 * Jest
 * MongoDb
-* Travis CI
 * Swagger
 * Bcrypt
 * JsonWebToken
