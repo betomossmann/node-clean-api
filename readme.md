@@ -2,7 +2,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/betomossmann/clean-code-react/badge.svg)](https://snyk.io/test/github/betomossmann/clean-code-react)
 [![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
 
-# **[BDev](http://beto.dev.br/) - API NodeJs, TS, TDD, CA, DP and SOLID**
+# **[BDev](http://beto.dev.br/) - API NodeJs, Typescript...**
 
 ## *- NodeJs, Typescript, TDD, Clean Architecture, Design Patterns and SOLID*
 
